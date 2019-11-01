@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- 容器级 bean实例化后置处理器，用于实例化前后 -->
+	<bean id="myInstantiationAwareBeanPostProcessorAdapter" class="com.ld.spring.bean.lifecycle.MyInstantiationAwareBeanPostProcessorAdapter"/>
+    
+    <!--容器级 bean后置处理器，用于初始化前后 -->
+	<bean id="myBeanPostProcessor" class="com.ld.spring.bean.lifecycle.MyBeanPostProcessor"/>
+
+	<!-- Person对象 -->
+	<bean id="person" class="com.ld.spring.bean.lifecycle.Person" init-method="initMethod" destroy-method="destroyMethod">
+		<property name="name" value="ld"/>
+		<property name="age" value="18"/>
+	</bean>
+	
+	
+
+</beans>
