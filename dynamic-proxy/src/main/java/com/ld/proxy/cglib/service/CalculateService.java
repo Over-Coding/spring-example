@@ -1,11 +1,11 @@
-package com.ld.proxy.jdk.service;
+package com.ld.proxy.cglib.service;
 
 /**
  * @author ld
  * @create 2019年11月1日:下午4:26:59
  * @desc 
  */	
-public class CalculateServiceImpl implements CalculateService{
+public class CalculateService{
 
 	/**
 	     * 加法计算
@@ -24,7 +24,7 @@ public class CalculateServiceImpl implements CalculateService{
 	* @param two
 	* @return
 	*/
-	public int sub(int one,int two){
+	public final int sub(int one,int two){
 		int result = one - two;
 		return result;
 	}

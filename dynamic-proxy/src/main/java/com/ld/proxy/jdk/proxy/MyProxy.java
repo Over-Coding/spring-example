@@ -5,35 +5,16 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 import java.util.Arrays;
 
-import com.ld.proxy.jdk.service.CalculateService;
-
 /**
  * @author ld
- * @create 2019年11月1日:下午4:37:21
- * @desc jdk 动态代理
-    *     动态代理的三要素：代理对象、目标对象、代理要做的工作
- * 
- * JDK的动态代理：
- * 	1、Proxy：是所有动态代理类的父类，专门用于生成代理类或者是代理对象
- *      ①：用于生成代理类的class对象
- * 		public static Class<?> getProxyClass(ClassLoader loader,
-                                         Class<?>... interfaces)
-        
- *      ②：用于生成代理对象
- *      public static Object newProxyInstance(ClassLoader loader,
-                                          Class<?>[] interfaces,
-                                          InvocationHandler h)
- * 
- * 2、InvocationHandler：完成动态代理的整个过程
- *    public Object invoke(Object proxy, Method method, Object[] args)
- * 
+ * @create 2019年11月4日:下午1:47:17
+ * @desc 创建通用的代理
  */
-public class CalculateProxy {
-	
+public class MyProxy {
 	//1、获取目标对象
-	private CalculateService target;
+	private Object target;
 	
-	public CalculateProxy(CalculateService target) {
+	public MyProxy(Object target) {
 		this.target = target;
 	}
 	
@@ -83,5 +64,4 @@ public class CalculateProxy {
 		});
 		return proxy;
 	}
-
 }
